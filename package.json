@@ -61,6 +61,7 @@
     "normalize-styl": "3.0.3",
     "npm-run-all": "^4.0.2",
     "onchange": "^2.2.0",
+    "rimraf": "^2.6.1",
     "serve-static": "1.10.2",
     "stylus": "^0.54.2",
     "uglifyify": "^3.0.1",
