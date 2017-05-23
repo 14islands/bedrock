@@ -42,6 +42,7 @@
     "$": "global:$"
   },
   "dependencies": {
+    "component-loader-js": "^3.1.1",
     "normalize-styl": "^3.0.3",
     "webfontloader": "^1.6.24"
   },
