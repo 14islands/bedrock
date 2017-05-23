@@ -1,0 +1,47 @@
+/*
+* Base pixel for all REM/EM calcs
+*/
+base-font-size := 16
+
+/*
+* Function for return value with a new unit
+* (or null if no value)
+*/
+set-unit(value, unit)
+  if value
+    value = value * unit
+
+/*
+* Function for converting pixel values to
+* relative rem value
+* @param context-px optional parameter for context font-size
+* --moz-device-pixel-ratiouses base-font-size size as default
+*
+*/
+px-to-rem(target-px = null, context-px = base-font-size)
+  if target-px
+    set-unit(remove-unit(target-px) / context-px, 1rem)
+
+/*
+* Mixin for writing out a property with a
+* rem value and a px fallback
+*/
+px-to-rem-multi(prop, first, second = null, third = null, fourth = null)
+  {prop}: px-to-rem(first) px-to-rem(second) px-to-rem(third) px-to-rem(fourth)
+
+/*
+* Function for ceonverting pixel values to relative rem value
+*
+* @param context-px optional parameter for context font-size
+* --moz-device-pixel-ratiouses base-font-size size as default
+*
+*/
+px-to-em(target-px, context-px = base-font-size)
+  if target-px
+    set-unit(target-px / context-px, 1em)
+
+/*
+ *	Mixin for writing out a property with an em value and a px fallback
+ */
+px-to-emMulti(prop, first, second = null, third = null, fourth = null, context-px = base-font-size)
+  {prop}: px-to-em(first, context-px) px-to-em(second, context-px) px-to-em(third, context-px) px-to-em(fourth, context-px)

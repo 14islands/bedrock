@@ -1,0 +1,14 @@
+a
+	color: currentColor
+	text-decoration: none
+	position: relative
+	border-bottom: 1px solid colors.linkUnderline
+	transition-property: border, color
+	transition-duration: 0.1s
+	transition-timing-function: ease.quadOut
+
+.no-touchevents
+	a
+		&:hover
+			color: colors.linkColorHover
+			border-color: colors.linkUnderlineHover

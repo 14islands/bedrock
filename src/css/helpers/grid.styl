@@ -1,0 +1,32 @@
+// Lint complaining about nested hashes.
+// @stylint off
+grid = {
+	sm : {
+		number-of-columns: 12,
+		column-size: 75px,
+		gutter-size: 40px,
+		context-size: 640px
+	},
+	md : {
+		number-of-columns: 12,
+		column-size: 75px,
+		gutter-size: 40px,
+		context-size: 1440px
+	}
+}
+// @stylint on
+
+get-column-size(prefix)
+	(grid[prefix].column-size)
+
+get-gutter-size(prefix)
+	(grid[prefix].gutter-size)
+
+col-size-fixed(prefix, cols)
+	col-size = get-column-size(prefix)
+	gutter-size = get-gutter-size(prefix)
+	(col-size + gutter-size) * cols
+
+col-size-fluid(prefix, cols)
+	col-size = col-size-fixed(prefix, cols)
+	(col-size) * 1%

@@ -1,0 +1,54 @@
+/*
+* Breakpoint wider than number of pixels
+*
+* @example
+* @include wider-than(960px) { color: hotpink; }
+*
+*/
+wider-than(b)
+	@media (min-width: b)
+		{block}
+
+/*
+* Breakpoint narrower than number of pixels (removing 1px to not overlap with min-width)
+*
+* @example
+* @include narrower-than(960px) { color: hotpink; }
+*
+*/
+narrower-than(b)
+	@media (max-width: (b - 1px))
+		{block}
+
+/*
+* Breakpoint wider and narrower than number of pixels (removing 1px to not overlap with min-width)
+*
+* @example
+* @include wider-and-narrower-than(720px, 960px) { color: hotpink; }
+*
+*/
+wider-and-narrower-than(a, b)
+	@media (min-width: (a - 1px)) and (max-width: (b - 1px))
+		{block}
+
+/*
+* Breakpoint taller than number of pixels
+*
+* @example
+* @include taller-than(960px) { color: hotpink; }
+*
+*/
+taller-than(b)
+	@media (min-height: b)
+		{block}
+
+/*
+* Breakpoint shorter than number of pixels (inclusive)
+*
+* @example
+* @include shorter-than(960px) { color: hotpink; }
+*
+*/
+shorter-than(b)
+	@media (max-height: (b - 1px))
+		{block}

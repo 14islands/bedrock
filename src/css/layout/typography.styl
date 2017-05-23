@@ -1,0 +1,51 @@
+
+
+// FONT definition block (blocks are copied - not extended)
+font-product-sans-bold = @block {
+  font-family: font-family-product-sans-black
+  font-weight: $font-weight-bold
+  font-style: normal
+}
+
+font-product-sans-medium = @block {
+  font-family: font-family-product-sans-medium
+  font-weight: $font-weight-medium
+  font-style: normal
+}
+
+// Default font settings based on Tags
+body
+  font-family: font-family-roboto
+  font-weight: $font-weight-bold
+p
+  line-height: px-to-rem(20)
+  font-size: px-to-rem(14)
+  +wider-than(breakpoints.sm)
+    line-height: px-to-rem(24)
+    font-size: px-to-rem(16)
+  &.body-medium
+    font-size: px-to-rem(13)
+    font-weight: $font-weight-medium
+  &.body-large
+    font-size: px-to-rem(16)
+h1
+  { font-product-sans-bold }
+  font-size: px-to-rem(100)
+h2
+  { font-product-sans-bold }
+  font-size: px-to-rem(24)
+  +wider-than(breakpoints.sm)
+    font-size: px-to-rem(45)
+h3
+  { font-product-sans-bold }
+  font-size: px-to-rem(16)
+  +wider-than(breakpoints.sm)
+    font-size: px-to-rem(24)
+h4
+  { font-product-sans-bold }
+  font-size: px-to-rem(16)
+  +wider-than(breakpoints.sm)
+    font-size: px-to-rem(20)
+h5
+  { font-product-sans-bold }
+  font-size: px-to-rem(16)

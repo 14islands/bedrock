@@ -1,0 +1,66 @@
+//
+// Hide it completely
+//
+$u-hidden
+  display: none !important
+
+//
+// Hide only visually, but have it available for screen readers: h5bp.com/v
+//
+$u-visuallyHidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+
+//
+// Extends the .visuallyHidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+//
+$u-visuallyHidden--focusable:active,
+$u-visuallyHidden--focusable:focus
+  clip: auto
+  height: auto
+  margin: 0
+  overflow: visible
+  position: static
+  width: auto
+
+//
+// Hide visually and from screen readers, but maintain layout
+//
+$u-invisible
+  visibility: hidden
+  opacity: 0
+
+//
+// Not visible in the page
+//
+.is-inactive
+  @extend $u-hidden
+
+.is-invisible
+  @extend $u-invisible
+
+
+// animation states
+.ui-animate-show
+  animation: 400ms fade-in ease.quad-out 1
+  animation-delay: 150ms
+  animation-fill-mode: backwards
+
+.ui-animate-hide
+	animation: 300ms fade-out ease.quad-in 1
+	animation-fill-mode: forwards
+
+.ui-animate-slide-in-from-left
+	animation: 500ms slide-in-from-left ease.circ-in-out 1
+	animation-fill-mode: backwards
+
+.ui-animate-slide-out-left
+	animation: 400ms slide-out-left ease.circ-in-out 1
+	animation-fill-mode: forwards
