@@ -6,7 +6,7 @@
   "scripts": {
     "start": "run-p watch browser-sync",
     "clean": "rimraf ./build/*",
-    "browser-sync": "browser-sync start --server './build' --logLevel info --files 'build/**/*' --port 3030 --reload-debounce 500",
+    "browser-sync": "browser-sync start --server './build' --logLevel info --files 'build/**/*.css, build/**/*.js, build/**/*.html' --port 3030 --reload-debounce 500",
     "copy:assets": "cp -R ./assets ./build/",
     "copy:vendor": "cp -R ./vendor ./build/",
     "build": "run-p build:*",
